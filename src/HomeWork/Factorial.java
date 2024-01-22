@@ -6,38 +6,38 @@ public class Factorial {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите число");
-        int a = scanner.nextInt();
-        System.out.println(useFor(a));
-        System.out.println(useWhile(a));
-        System.out.println(useDoWhile(a));
+        int num = scanner.nextInt();
+        System.out.println(useFor(num));
+        System.out.println(useWhile(num));
+        System.out.println(useDoWhile(num));
     }
 
-    public static int useFor(int a) {
-        int fact1 = 1;
-        for (int i = 1; i <= a; i++) {
-            fact1 = fact1 * i;
+    public static int useFor(int num) {
+        int fact = 1;
+        for (int i = 1; i <= num; i++) {
+            fact = fact * i;
         }
-        return fact1;
+        return fact;
     }
 
-    public static int useWhile(int a) {
-        int fact2 = 1;
-        int num = 1;
-        while (num <= a){
-            fact2 = fact2 * num;
-            num ++;
+    public static int useWhile(int num) {
+        int fact = 1;
+        int i = 1;
+        while (i <= num) {
+            fact = fact * i;
+            i++;
         }
-        return fact2;
+        return fact;
     }
 
-    public static int useDoWhile(int a) {
-     int fact3 = 1;
-     int num = 1;
-     do {
-         fact3 = fact3 * num;
-         num ++;
-     }while (num <= a);
-     return fact3;
+    public static int useDoWhile(int num) {
+        int fact = 1;
+        int i = 1;
+        do {
+            fact = fact * i;
+            i++;
+        } while (i <= num);
+        return fact;
     }
 
 

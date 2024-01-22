@@ -14,7 +14,7 @@ public class TrapezeScann {
         double c = scanner.nextDouble();
         System.out.println("d");
         double d = scanner.nextDouble();
-        double p = a + b + +c+ +d;
+        double p = a + b + c + d;
         System.out.println("Периметр трапеции Р=" + p);
     }
 }

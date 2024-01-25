@@ -8,48 +8,103 @@ public class Fibonacci {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите число > 0:  ");
         int num = scanner.nextInt();
-        if (num <= 0){
-            System.out.println("Вы ввели некорректное число");
-        } else if (num == 1){
-            System.out.println("Последовательность Фибоначчи: " + 0);
-        } else {
-            System.out.println("Последовательность Фибоначчи: " + Arrays.toString(getFibonacciSeguenceFor(num)));
-            System.out.println("Последовательность Фибоначчи: " + Arrays.toString(getFibonacciSeguenceWhile(num)));
-            System.out.println("Последовательность Фибоначчи: " + Arrays.toString(getFibonacciSeguenceDoWhile(num)));
-        }
+        System.out.println("Последовательность Фибоначчи: " + Arrays.toString(getFibonacciSeguenceFor(num)));
+        System.out.println("Последовательность Фибоначчи: " + Arrays.toString(getFibonacciSeguenceWhile(num)));
+        System.out.println("Последовательность Фибоначчи: " + Arrays.toString(getFibonacciSeguenceDoWhile(num)));
     }
 
     public static int[] getFibonacciSeguenceFor(int num) {
-        int[] sequence = new int[num];
-        sequence[0] = 0;
-        sequence[1] = 1;
-        for (int i = 2; i < sequence.length; i++) {
-            sequence[i] = sequence[i - 1] + sequence[i - 2];
+        if (num < 0) {
+            System.out.println("Вы ввели недопустимое значение!");
+            int[] error = new int[0];
+            return error;
+        } else {
+            int[] sequence = new int[num];
+            if (num == 0) {
+                return sequence;
+            }
+            sequence[0] = 0;
+            if (num == 1) {
+                return sequence;
+            }
+            sequence[1] = 1;
+            if (num == 2) {
+                return sequence;
+            } else {
+                for (int i = 2; i < sequence.length; i++) {
+                    sequence[i] = sequence[i - 1] + sequence[i - 2];
+                }
+                return sequence;
+            }
         }
-        return sequence;
     }
+
 
     public static int[] getFibonacciSeguenceWhile(int num) {
-        int[] sequence = new int[num];
-        sequence[0] = 0;
-        sequence[1] = 1;
-        int i = 2;
-        while (i < num) {
-            sequence[i] = sequence[i - 1] + sequence[i - 2];
-            i = i + 1;
+        if (num < 0) {
+            System.out.println("Вы ввели недопустимое значение!");
+            int[] error = new int[0];
+            return error;
+        } else {
+            int[] sequence = new int[num];
+            switch (num) {
+                case (0):
+                    return sequence;
+
+                case (1):
+                    sequence[0] = 0;
+                    return sequence;
+
+                case (2):
+                    sequence[0] = 0;
+                    sequence[1] = 1;
+                    return sequence;
+
+                default:
+                    sequence[0] = 0;
+                    sequence[1] = 1;
+                    int i = 2;
+                    while (i < num) {
+                        sequence[0] = 0;
+                        sequence[1] = 1;
+                        sequence[i] = sequence[i - 1] + sequence[i - 2];
+                        i = i + 1;
+                    }
+                    return sequence;
+            }
         }
-        return sequence;
-    }
-    public static int[] getFibonacciSeguenceDoWhile(int num) {
-        int[] sequence = new int[num];
-        sequence[0] = 0;
-        sequence[1] = 1;
-        int i = 2;
-        do {
-            sequence[i] = sequence[i - 1] + sequence[i - 2];
-            i = i + 1;
-        } while (i < num);
-        return sequence;
     }
 
+    public static int[] getFibonacciSeguenceDoWhile(int num) {
+        if (num < 0) {
+            System.out.println("Вы ввели недопустимое значение!");
+            int[] error = new int[0];
+            return error;
+        } else {
+            int[] sequence = new int[num];
+            switch (num) {
+                case (0):
+                    return sequence;
+
+                case (1):
+                    sequence[0] = 0;
+                    return sequence;
+
+                case (2):
+                    sequence[0] = 0;
+                    sequence[1] = 1;
+                    return sequence;
+
+                default:
+                    sequence[0] = 0;
+                    sequence[1] = 1;
+                    int i = 2;
+                    do {
+                        sequence[i] = sequence[i - 1] + sequence[i - 2];
+                        i = i + 1;
+                    } while (i < num);
+                    return sequence;
+            }
+        }
+    }
 }

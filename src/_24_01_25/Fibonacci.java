@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Fibonacci {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите число:  ");
+        System.out.println("Введите число > 0:");
         int num = scanner.nextInt();
         System.out.println("Последовательность Фибоначчи: " + Arrays.toString(getFibonacciSeguenceFor(num)));
         System.out.println("Последовательность Фибоначчи: " + Arrays.toString(getFibonacciSeguenceWhile(num)));

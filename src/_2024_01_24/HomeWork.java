@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class HomeWork {
     public static void main(String[] args) {
-        int[] myList = {5, 24, 15, -10, 0, 12, 55, -4, 35, -43, 75};
+        int[] myList = {10, 0, 2, 9, 1, 7, 3, 8, 4, 5, 11};
         System.out.println("Сортировки по возрастанию " + Arrays.toString(sortMinMax(myList)));
         System.out.println("Сортировки по убыванию " + Arrays.toString(sortMaxMin(myList)));
     }
@@ -15,7 +15,7 @@ public class HomeWork {
 
             int max = array[0];
             int index = 0;
-            for (int j = 0 + i; j < array.length - i; j++) {
+            for (int j = 0; j < array.length - i; j++) {
                 if (array[j] > max) {
                     max = array[j];
                     index = j;
@@ -38,7 +38,7 @@ public class HomeWork {
 
             int min = array[0];
             int index = 0;
-            for (int j = 0 + i; j < array.length - i; j++) {
+            for (int j = 0; j < array.length - i; j++) {
                 if (array[j] < min) {
                     min = array[j];
                     index = j;

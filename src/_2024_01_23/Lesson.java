@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Lesson {
     public static void main(String[] args) {
-        int[] myList = {1, 3, 1, -2, 100, 120, 2};
+        int[] myList = {1, 0, 1, -2, 100, -120, 2};
         System.out.println("Наибольшее значение:" + getMaxNumber(myList));
         System.out.println("Наибольшее значение с четным индексом:" + getMaxEven(myList));
         System.out.println("Сумма положительных четных элементов:" + getPlusSum(myList));
@@ -72,17 +72,25 @@ public class Lesson {
 
     public static int[] getTwooLess(int[] myList) {
         int[] twooLess = new int[2];
-        int min1 = myList[0];
-        int min2 = myList[1];
+        int min1;
+        int min2;
         int indMin = 0;
+        if (myList[0] < myList[1]) {
+            min1 = myList[0];
+            min2 = myList[1];
+        } else {
+            min1 = myList[1];
+            min2 = myList[0];
+        }
+
         for (int i = 0; i < myList.length; i++) {
-            if(myList[i]< min1) {
+            if (myList[i] < min1) {
                 min1 = myList[i];
                 indMin = i;
             }
         }
         for (int j = 0; j < myList.length; j++) {
-            if (myList[j] <= min2 &&j != indMin) {
+            if (myList[j] <= min2 && j != indMin) {
                 min2 = myList[j];
             }
         }

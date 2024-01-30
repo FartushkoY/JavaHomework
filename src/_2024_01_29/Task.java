@@ -38,8 +38,7 @@ public class Task {
 
     public static String getStringChange(String string) {
         char[] chars = string.toCharArray();
-        char[] charsTemp = new char[chars.length];
-        charsTemp = Arrays.copyOf(chars, chars.length);
+        char[] charsTemp = Arrays.copyOf(chars, chars.length);
         int temp = 1;
         for (int i = 0; i < chars.length / 2; i++) {
             chars[i+temp] = charsTemp[i];

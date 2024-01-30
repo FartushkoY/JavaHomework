@@ -4,13 +4,14 @@ import java.util.Arrays;
 
 public class Lesson {
     public static void main(String[] args) {
-        int[] myList = {1, 0, 1, -2, 100, -120, 2};
+        int[] myList = {1, -1, 5, 7, -8};
         System.out.println("Наибольшее значение:" + getMaxNumber(myList));
         System.out.println("Наибольшее значение с четным индексом:" + getMaxEven(myList));
         System.out.println("Сумма положительных четных элементов:" + getPlusSum(myList));
         System.out.println("Среднее арифметическое:" + getMediumNumber(myList));
         System.out.println("Массив с элементами меньше среднего арифметического:" + Arrays.toString(getLessMedium(myList)));
         System.out.println("Минимальные элементы массива" + Arrays.toString(getTwooLess(myList)));
+        System.out.println("Минимальные элементы массива" + Arrays.toString(getTwooLessNew(myList)));
         System.out.println("Сумма модулей элементов массива: " + getSumAbs(myList));
         System.out.println("Номер минимального по модулю элемента массива: " + getIndexMin(myList));
         System.out.println("Новый массив " + Arrays.toString(getChange(myList)));
@@ -72,16 +73,9 @@ public class Lesson {
 
     public static int[] getTwooLess(int[] myList) {
         int[] twooLess = new int[2];
-        int min1;
-        int min2;
+        int min1 = myList[0];
+        int min2 = Integer.MAX_VALUE;
         int indMin = 0;
-        if (myList[0] < myList[1]) {
-            min1 = myList[0];
-            min2 = myList[1];
-        } else {
-            min1 = myList[1];
-            min2 = myList[0];
-        }
 
         for (int i = 0; i < myList.length; i++) {
             if (myList[i] < min1) {
@@ -98,6 +92,33 @@ public class Lesson {
         twooLess[1] = min2;
         return twooLess;
     }
+
+    public static int[] getTwooLessNew(int[] myList) {
+        int[] twooLess = new int[2];
+        int min1 = myList[0];
+        int min2;
+        int indMin = 0;
+        int indMin2;
+        for (int i = 0; i < myList.length; i++) {
+            if (myList[i] < min1) {
+                min1 = myList[i];
+                indMin = i;
+            }
+        }
+        if (indMin > 0) {
+            min2 = myList[indMin - 1];
+        } else min2 = myList[indMin + 1];
+        for (int j = 0; j < myList.length; j++) {
+            if (myList[j] <= min2 && j != indMin) {
+                min2 = myList[j];
+            }
+        }
+        twooLess[0] = min1;
+        twooLess[1] = min2;
+        return twooLess;
+    }
+
+
 
     public static int getSumAbs(int[] myList) {
         int sumAbs = 0;

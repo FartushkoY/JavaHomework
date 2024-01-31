@@ -8,17 +8,19 @@ public class Task {
         String string1 = "ABCDE12345";
         String string2 = "hododkxd";
         String string3 = "hodod";
-        String string4 = "hfnfksNwnblKwbmDwyg";
-        System.out.println(getThreeStrings("Hello world"));
-        System.out.println(getThreeStringsJoin(string0));
-        System.out.println(getFirstMiddleLast(string0));
-        System.out.println(getStringChange(string1));
-        System.out.println(replaceNumbers(string1));
-        System.out.println(Arrays.toString(getWanted(string2)));
-        System.out.println(shouEveryThird(string0));
-        System.out.println(serchElem(string0));
-        System.out.println(serchElem(string3));
-        System.out.println(findElemBefore(string4));
+        String string4 = "hfnfksNnblKbmDyg";
+//        System.out.println(getThreeStrings("Hello world"));
+//        System.out.println(getThreeStringsJoin(string0));
+//        System.out.println(getFirstMiddleLast(string0));
+//        System.out.println(getStringChange(string1));
+//        System.out.println(replaceNumbers(string1));
+//        System.out.println(Arrays.toString(getWanted(string2)));
+//        System.out.println(shouEveryThird(string0));
+//        System.out.println(serchElem(string0));
+//        System.out.println(serchElem(string3));
+//        System.out.println(findElemBefore(string4));
+        System.out.println(findElemBeforeNew(string4));
+
 
     }
 
@@ -108,7 +110,7 @@ public class Task {
         StringBuilder elems = new StringBuilder();
         if (string.length() > 5) {
             elems.append(string.substring(0, 3));
-            elems.append(string.substring(string.length() - 3, string.length()));
+            elems.append(string.substring(string.length() - 3));
             return elems.toString();
         } else {
             for (int i = 0; i < string.length(); i++) {
@@ -143,5 +145,26 @@ public class Task {
         } else
             beforeElem2.append(" встречается перед элементом w . ");
         return (beforeElem1.append(" ").append(beforeElem2)).toString();
+    }
+
+    public static String findElemBeforeNew(String string) {
+        StringBuilder elemX = new StringBuilder();
+        StringBuilder elemW = new StringBuilder();
+        int x =string.indexOf('x');
+        int w =string.indexOf('w');
+        if (x < 0 && w < 0) {
+            return (elemX.append("Символы х и w не найдены. ").toString());
+        }
+        if (x < 0) {
+            return (elemX.append("Символ х не найден. ").toString());
+        }
+        if (w < 0) {
+            return (elemW.append("Символ w не найден. ").toString());
+        }
+        if (x < w && x >= 0 && w >=0) {
+            return (elemX.append("Символ x встречается раньше, чем w").toString());
+        } else {
+            return (elemX.append("Символ w встречается раньше, чем x").toString());
+        }
     }
 }

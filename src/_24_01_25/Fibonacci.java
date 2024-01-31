@@ -17,21 +17,21 @@ public class Fibonacci {
 
         if (num < 0) {
             return error();
-        } else {
-            int[] sequence = new int[num];
-            if (num < 2) {
-                return sequence;
-            }
-            sequence[1] = 1;
-            if (num == 2) {
-                return sequence;
-            } else {
-                for (int i = 2; i < sequence.length; i++) {
-                    sequence[i] = sequence[i - 1] + sequence[i - 2];
-                }
-                return sequence;
-            }
         }
+        int[] sequence = new int[num];
+        if (num < 2) {
+            return sequence;
+        }
+        sequence[1] = 1;
+        if (num == 2) {
+            return sequence;
+        } else {
+            for (int i = 2; i < sequence.length; i++) {
+                sequence[i] = sequence[i - 1] + sequence[i - 2];
+            }
+            return sequence;
+        }
+
     }
 
 

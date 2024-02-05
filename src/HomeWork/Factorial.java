@@ -10,6 +10,7 @@ public class Factorial {
         System.out.println(useFor(num));
         System.out.println(useWhile(num));
         System.out.println(useDoWhile(num));
+
     }
 
     public static int useFor(int num) {

@@ -8,6 +8,7 @@ public class TaskString {
         Scanner scanner = new Scanner(System.in);
         String string = scanner.nextLine();
         System.out.println(getWord(string.toString()));
+
     }
     public static StringBuilder getWord(String string) {
         StringBuilder sb = new StringBuilder();

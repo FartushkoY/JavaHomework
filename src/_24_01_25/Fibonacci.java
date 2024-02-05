@@ -23,15 +23,10 @@ public class Fibonacci {
             return sequence;
         }
         sequence[1] = 1;
-        if (num == 2) {
-            return sequence;
-        } else {
-            for (int i = 2; i < sequence.length; i++) {
-                sequence[i] = sequence[i - 1] + sequence[i - 2];
-            }
-            return sequence;
+        for (int i = 2; i < sequence.length; i++) {
+            sequence[i] = sequence[i - 1] + sequence[i - 2];
         }
-
+        return sequence;
     }
 
 
@@ -43,20 +38,15 @@ public class Fibonacci {
         if (num < 2) {
             return sequence;
         }
-        switch (num) {
-            case (2):
-                sequence[1] = 1;
-                return sequence;
-            default:
-                sequence[1] = 1;
-                int i = 2;
-                while (i < num) {
-                    sequence[1] = 1;
-                    sequence[i] = sequence[i - 1] + sequence[i - 2];
-                    i = i + 1;
-                }
-                return sequence;
+        sequence[1] = 1;
+        int i = 2;
+        while (i < num) {
+            sequence[1] = 1;
+            sequence[i] = sequence[i - 1] + sequence[i - 2];
+            i = i + 1;
         }
+        return sequence;
+
     }
 
     public static int[] getFibonacciSeguenceDoWhile(int num) {
@@ -67,21 +57,16 @@ public class Fibonacci {
         if (num < 2) {
             return sequence;
         }
-        switch (num) {
-            case (2):
-                sequence[1] = 1;
-                return sequence;
-            default:
-                sequence[1] = 1;
-                int i = 2;
-                do {
-                    sequence[i] = sequence[i - 1] + sequence[i - 2];
-                    i = i + 1;
-                } while (i < num);
-                return sequence;
-
+        sequence[1] = 1;
+        if (num == 2) {
+            return sequence;
         }
-
+        int i = 2;
+        do {
+            sequence[i] = sequence[i - 1] + sequence[i - 2];
+            i = i + 1;
+        } while (i <= num);
+        return sequence;
     }
 
     public static int[] error() {

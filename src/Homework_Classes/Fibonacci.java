@@ -7,20 +7,15 @@ public class Fibonacci {
     }
 
     public Fibonacci(int num) {
-        if (num < 0) {
+        if (num >= 0) {
+            this.num = num;
+        } else {
             System.out.println("Число не может быть отрицательным!");
         }
-        this.num = num;
     }
 
     public int[] getFibonacciSeguenceFor() {
-        if (num < 0) {
-            return error();
-        }
         int[] sequence = new int[num];
-        if (num < 0) {
-            return error();
-        }
         if (num < 2) {
             return sequence;
         }
@@ -32,9 +27,6 @@ public class Fibonacci {
     }
 
     public int[] getFibonacciSeguenceWhile() {
-        if (num < 0) {
-            return error();
-        }
         int[] sequence = new int[num];
         if (num < 2) {
             return sequence;
@@ -47,13 +39,9 @@ public class Fibonacci {
             i = i + 1;
         }
         return sequence;
-
     }
 
     public int[] getFibonacciSeguenceDoWhile() {
-        if (num < 0) {
-            return error();
-        }
         int[] sequence = new int[num];
         if (num < 2) {
             return sequence;
@@ -70,21 +58,15 @@ public class Fibonacci {
         return sequence;
     }
 
-    public static int[] error() {
-        System.out.println("Вы ввели недопустимое значение!");
-        int[] error = new int[0];
-        return error;
-    }
-
     public void setNumber(int num) {
-        if (num < 0) {
-            System.out.println("Число не может быть отрицательным!");
+        if (num >= 0) {
+            this.num = num;
+        } else {
+            System.out.println("!Число не может быть отрицательным!");
         }
-        this.num = num;
     }
 
     public int getNumber() {
         return num;
     }
-
 }

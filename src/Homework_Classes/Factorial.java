@@ -3,62 +3,61 @@ package Homework_Classes;
 public class Factorial {
     private int num;
 
+
     public Factorial() {
     }
 
     public Factorial(int num) {
-        if (num < 0) {
-            System.out.println("Число не может быть отрицательным!");
+        if (num >= 0) {
+            this.num = num;
+        } else {
+            System.out.println("Вы ввели недопустимое значение!");
         }
-        this.num = num;
     }
 
     public int useFor() {
-        if (num >= 0) {
-            int fact = 1;
-            for (int i = 1; i <= num; i++) {
-                fact = fact * i;
-            }
-            return fact;
+        int fact = initiateFactorial();
+        for (int i = 1; i <= num; i++) {
+            fact = fact * i;
         }
-        System.out.println("Вы ввели недопустимое значение!");
-        return 0;
-
+        return fact;
     }
 
     public int useWhile() {
-        if (num >= 0) {
-            int fact = 1;
-            int i = 1;
-            while (i <= num) {
-                fact = fact * i;
-                i++;
-            }
-            return fact;
+        int fact = initiateFactorial();
+        int i = 1;
+        while (i <= num) {
+            fact = fact * i;
+            i++;
         }
-        System.out.println("Вы ввели недопустимое значение!");
-        return 0;
+        return fact;
     }
 
     public int useDoWhile() {
-        if (num >= 0) {
-            int fact = 1;
-            int i = 1;
-            do {
-                fact = fact * i;
-                i++;
-            } while (i <= num);
-            return fact;
+        int fact = initiateFactorial();
+        int i = 1;
+        do {
+            fact = fact * i;
+            i++;
+        } while (i <= num);
+        return fact;
+    }
+
+    private int initiateFactorial() {
+        if (num == 0) {
+            return 0;
+        } else {
+            return 1;
         }
-        System.out.println("Вы ввели недопустимое значение!");
-        return 0;
     }
 
     public void setNumber(int num) {
-        if (num < 0) {
+        if (num > 0) {
+            this.num = num;
+        } else {
             System.out.println("Число не может быть отрицательным!");
+            this.num = 0;
         }
-        this.num = num;
     }
 
     public int getNumber() {

@@ -1,29 +1,22 @@
-package Homework_Classes;
+package org.example.Homework_Classes;
 
-public class Fibonacci {
-    private int num;
-
-    public Fibonacci() {
-    }
+public class Fibonacci{
+    int num;
 
     public Fibonacci(int num) {
-        if (num >= 0) {
-            this.num = num;
-        } else {
-            System.out.println("Число не может быть отрицательным!");
-        }
+        this.num = num;
     }
 
     public int[] getFibonacciSeguenceFor() {
-        int[] sequence = new int[num];
-        if (num < 2) {
+            int[] sequence = new int[num];
+            if (num < 2) {
+                return sequence;
+            }
+            sequence[1] = 1;
+            for (int i = 2; i < sequence.length; i++) {
+                sequence[i] = sequence[i - 1] + sequence[i - 2];
+            }
             return sequence;
-        }
-        sequence[1] = 1;
-        for (int i = 2; i < sequence.length; i++) {
-            sequence[i] = sequence[i - 1] + sequence[i - 2];
-        }
-        return sequence;
     }
 
     public int[] getFibonacciSeguenceWhile() {
@@ -41,7 +34,7 @@ public class Fibonacci {
         return sequence;
     }
 
-    public int[] getFibonacciSeguenceDoWhile() {
+    protected int[] getFibonacciSeguenceDoWhile() {
         int[] sequence = new int[num];
         if (num < 2) {
             return sequence;
@@ -62,7 +55,7 @@ public class Fibonacci {
         if (num >= 0) {
             this.num = num;
         } else {
-            System.out.println("!Число не может быть отрицательным!");
+            System.out.println("Число не может быть отрицательным!");
         }
     }
 

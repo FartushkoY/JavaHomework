@@ -1,22 +1,17 @@
-package Homework_Classes;
+package org.example.Homework_Classes;
 
 public class Factorial {
     private int num;
 
-
     public Factorial() {
     }
 
-    public Factorial(int num) {
-        if (num >= 0) {
-            this.num = num;
-        } else {
-            System.out.println("Вы ввели недопустимое значение!");
-        }
-    }
+   public Factorial(int num) {
+       this.num = num;
+   }
 
     public int useFor() {
-        int fact = initiateFactorial();
+        int fact = 1;
         for (int i = 1; i <= num; i++) {
             fact = fact * i;
         }
@@ -24,7 +19,7 @@ public class Factorial {
     }
 
     public int useWhile() {
-        int fact = initiateFactorial();
+        int fact = 1;
         int i = 1;
         while (i <= num) {
             fact = fact * i;
@@ -34,7 +29,7 @@ public class Factorial {
     }
 
     public int useDoWhile() {
-        int fact = initiateFactorial();
+        int fact = 1;
         int i = 1;
         do {
             fact = fact * i;
@@ -43,20 +38,12 @@ public class Factorial {
         return fact;
     }
 
-    private int initiateFactorial() {
-        if (num == 0) {
-            return 0;
-        } else {
-            return 1;
-        }
-    }
-
     public void setNumber(int num) {
         if (num > 0) {
             this.num = num;
         } else {
             System.out.println("Число не может быть отрицательным!");
-            this.num = 0;
+            this.num = -111;
         }
     }
 
